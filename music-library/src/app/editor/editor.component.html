@@ -1,0 +1,45 @@
+<h4> Add an album with the Tracks</h4>
+
+
+<form [formGroup]="albumForm" class="example-form">
+  <mat-form-field class="example-full-width">
+        <mat-label>Album Name</mat-label>
+
+    <input matInput formControlName="albumName" >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+            <mat-label>Composer  Name</mat-label>
+
+    <input matInput formControlName="composerName">
+  </mat-form-field>
+    <mat-form-field class="example-full-width">
+            <mat-label>Release Date</mat-label>
+
+    <input matInput formControlName="releaseDate">
+  </mat-form-field>
+  <div>
+   <div formArrayName="titles"
+    *ngFor="let title of albumForm.controls['titles'].controls; let i = index">
+    <div [formGroupName]="i">
+      <mat-form-field class="example-full-width">
+            <mat-label>Title  Name</mat-label>
+
+    <input matInput formControlName="titleName">
+  </mat-form-field>
+    <mat-form-field class="example-full-width">
+            <mat-label>Artist Name</mat-label>
+
+    <input matInput formControlName="artistName">
+  </mat-form-field>
+
+    </div>
+      
+
+  </div>
+    <button  mat-raised-button color="primary" (click)="addMoreTrack()">Add Track</button>
+</div>
+<br>
+    <button  mat-raised-button color="primary" (click)="Sumbit()">Sumbit</button>
+
+</form>

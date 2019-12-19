@@ -1,0 +1,28 @@
+  <div [formGroup]='searchForm'>  <mat-form-field class="searh">
+            <mat-label>Search</mat-label>
+
+    <input matInput formControlName="searchText">
+  </mat-form-field>
+
+<div  class='container'>
+
+
+<mat-card  *ngFor='let album of albums | filter : searchForm.get("searchText").value' class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{album.albumName}}</mat-card-title>
+    <mat-card-subtitle>by {{album.composerName}}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>Released On :
+<p> {{album.releaseDate}}</p>
+Tracks
+  <p *ngFor='let track  of album.titles' >  <span>
+    {{track.titleName}}</span></p>
+ 
+  
+  </mat-card-content>
+
+</mat-card>
+
+</div></div>

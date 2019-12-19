@@ -1,0 +1,18 @@
+
+
+{{tracks}}
+<div *ngIf='tracks'>
+<mat-card  *ngFor='let track of tracks' class="example-card">
+
+
+  <mat-card-content>
+
+  <p  >  <span>
+    {{track.titleName}}</span></p>
+ <p  > Artist:  <span>
+    {{track.artistName}}</span></p>
+  
+  </mat-card-content>
+
+</mat-card>
+</div>

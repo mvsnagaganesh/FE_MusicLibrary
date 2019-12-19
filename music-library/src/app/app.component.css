@@ -1,0 +1,17 @@
+.ml-navbar{
+  justify-content: space-around;
+}
+p {
+  font-family: Lato;
+}
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+
+}
+
+.logo{
+  width: 40px;
+  margin-top:4px;
+}
